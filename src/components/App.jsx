@@ -1,7 +1,15 @@
+import { useState } from "react";
+import FormContainer from "./Aside-form/FormContainer";
+
 function App() {
+  const [contact, setContact] = useState({
+    name:"",
+    email:"",
+    phone:""
+  });
   return (
     <>
-      <div>app</div>
+      <FormContainer contact={contact} setContact={setContact}/>
     </>
   );
 }
