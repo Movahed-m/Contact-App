@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import input from "../../constants/input";
+import styles from "../../styles/Aside-form/Form.module.css";
 
 const Form = ({ setShow, contact, setContact, children }) => {
   const [alert, setAlert] = useState("");
@@ -32,15 +33,15 @@ const Form = ({ setShow, contact, setContact, children }) => {
   };
 
   return (
-    <>
-      <button onClick={() => setShow((show) => ({ ...show, showForm: false }))}>
+    <div className={styles["inner-form-container"]}>
+      <button onClick={() => setShow((show) => ({ ...show, showForm: false }))} className={styles["form-button"]}>
         back
       </button>
 
       <form onSubmit={formHandler}>
         {children}
         {input.map((item, index) => (
-          <div key={index}>
+          <div key={index} className={styles["form-input-container"]}>
             <label htmlFor={item.name}>{item.labelName}</label>
             <input
               type={item.type}
@@ -53,9 +54,9 @@ const Form = ({ setShow, contact, setContact, children }) => {
           </div>
         ))}
         <button type="submit">Add Contact</button>
-        {alert && <p>{alert}</p>}
+        {alert && <p className={alert === "Please Inter Valid Data!" ? styles["error-message"]: styles["sucesses-message"]}>{alert}</p>}
       </form>
-    </>
+    </div>
   );
 };
 

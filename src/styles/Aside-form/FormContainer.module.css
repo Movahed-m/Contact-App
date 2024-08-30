@@ -17,7 +17,7 @@
     border-bottom: 2px solid #ffffff4f;
 }
 
-.form-container button {
+.form-container-button {
     margin: auto;
     width: 80px;
     height: 80px;
@@ -29,6 +29,10 @@
     transition: all .25s ease-in-out;
 }
 
-.form-container button:hover {
+.form-container-button:hover {
     box-shadow: 0 0 30px 1px #1AE527;
+}
+
+.show-form {
+    display: none;
 }

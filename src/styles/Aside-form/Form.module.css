@@ -1,0 +1,91 @@
+.inner-form-container {
+  position: absolute;
+  bottom: 30px;
+  width: 24%;
+  height: 81%;
+}
+
+.inner-form-container > button {
+  width: 60px;
+  height: 35px;
+  border-radius: 10px;
+  margin: 8px;
+  background-color: #ffffff;
+  box-shadow: -3px 3px 10px 2px #d4d4d4;
+  transition: all 0.25s ease-in-out;
+}
+
+.inner-form-container > button:hover {
+  color: #fff;
+  background-color: #45caff;
+  box-shadow: -3px 3px 10px 2px #3c89a85e;
+}
+
+.inner-form-container form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input-container label {
+  font-size: 1.2rem;
+  padding: 0 20px;
+  margin: 15px 0;
+}
+
+.form-input-container input,
+.inner-form-container form > button {
+  width: 90%;
+  height: 50px;
+  border-radius: 8px;
+  padding-left: 20px;
+  margin: 0 auto;
+}
+
+.form-input-container input:focus {
+  outline: 1px solid #1eff00b2;
+}
+
+.form-input-container input:last-child::-webkit-outer-spin-button,
+.form-input-container input:last-child::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.inner-form-container form > button {
+  margin: 20px auto;
+  padding: 0;
+  background-color: #1ae527;
+  box-shadow: 0 0 20px 1px #0fad19;
+  color: #fff;
+  transition: all 0.25s ease-in-out;
+}
+
+.inner-form-container form > button:hover {
+  box-shadow: 0 0 30px 1px #1ae527;
+}
+
+.inner-form-container form p {
+  width: 90%;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.error-message {
+  background-color: #fd9c9c;
+  color: #ff0000;
+}
+
+.sucesses-message {
+  background-color: #99c5ba;
+  color: #15ff00;
+}
