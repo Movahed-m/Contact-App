@@ -3,6 +3,7 @@ import FormContainer from "./Aside-form/FormContainer";
 import Form from "./Aside-form/Form";
 import PhotoContainer from "./Aside-form/PhotoContainer";
 import Photo from "./Aside-form/Photo";
+import styles from "../styles/App.module.css"
 
 function App() {
   const [show, setShow] = useState({
@@ -16,9 +17,9 @@ function App() {
     phone: "",
     photo: "../../public/photos/unknown.webp",
   });
-  
+
   return (
-    <>
+    <div className={styles.container}>
       <FormContainer setShow={setShow} show={show}>
         <Form contact={contact} setContact={setContact} setShow={setShow}>
           <PhotoContainer
@@ -30,7 +31,7 @@ function App() {
           </PhotoContainer>
         </Form>
       </FormContainer>
-    </>
+    </div>
   );
 }
 
