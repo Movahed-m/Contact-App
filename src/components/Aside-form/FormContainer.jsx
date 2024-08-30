@@ -1,5 +1,4 @@
 const FormContainer = ({ show: { showForm }, setShow, children }) => {
-  console.log(showForm)
   const showHandler = () => {
     setShow((show) => ({ ...show, showForm: true }));
   };
