@@ -2,8 +2,7 @@ import { useState } from "react";
 
 import input from "../../constants/input";
 
-
-const Form = ({ setShow, contact, setContact ,children}) => {
+const Form = ({ setShow, contact, setContact, children }) => {
   const [alert, setAlert] = useState("");
 
   const formHandler = (event) => {
@@ -11,8 +10,11 @@ const Form = ({ setShow, contact, setContact ,children}) => {
     if (!contact.name || !contact.email || !contact.phone) {
       setAlert("Please Inter Valid Data!");
       return;
+    } else {
+      setAlert("Contact Added Sucssessfully");
+      setTimeout(() => setAlert(""), 2000);
     }
-    setAlert("");
+
     console.log(contact);
     setContact({
       name: "",
@@ -31,7 +33,9 @@ const Form = ({ setShow, contact, setContact ,children}) => {
 
   return (
     <>
-      <button onClick={() => setShow(show => ({...show,showForm: false}))}>back</button>
+      <button onClick={() => setShow((show) => ({ ...show, showForm: false }))}>
+        back
+      </button>
 
       <form onSubmit={formHandler}>
         {children}

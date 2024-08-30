@@ -9,14 +9,14 @@ function App() {
     showForm: false,
     showPhoto: false,
   });
-  // const [showPhoto, setShowPhoto] = useState(false);
-
+  
   const [contact, setContact] = useState({
     name: "",
     email: "",
     phone: "",
     photo: "../../public/photos/unknown.webp",
   });
+  
   return (
     <>
       <FormContainer setShow={setShow} show={show}>
