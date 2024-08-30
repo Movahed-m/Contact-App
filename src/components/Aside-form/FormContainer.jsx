@@ -1,7 +1,7 @@
-const FormContainer = ({show,setShow,children}) => {
-  
+const FormContainer = ({ show: { showForm }, setShow, children }) => {
+  console.log(showForm)
   const showHandler = () => {
-    setShow(true);
+    setShow((show) => ({ ...show, showForm: true }));
   };
   return (
     <>
@@ -9,7 +9,7 @@ const FormContainer = ({show,setShow,children}) => {
         <h3>Add New Contact</h3>
         <button onClick={showHandler}>+</button>
       </div>
-      {show && children}
+      {showForm && children}
     </>
   );
 };

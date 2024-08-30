@@ -31,7 +31,7 @@ const Form = ({ setShow, contact, setContact ,children}) => {
 
   return (
     <>
-      <button onClick={() => setShow(false)}>back</button>
+      <button onClick={() => setShow(show => ({...show,showForm: false}))}>back</button>
 
       <form onSubmit={formHandler}>
         {children}

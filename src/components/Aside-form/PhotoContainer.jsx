@@ -1,8 +1,8 @@
-const PhotoContainer = ({ showPhoto, setShowPhoto, photo, children }) => {
+const PhotoContainer = ({ show: {showPhoto}, setShow, photo, children }) => {
   return (
     <div>
       <img src={photo} alt="photo" />
-      <button onClick={() => setShowPhoto(true)}>🖊</button>
+      <button onClick={() => setShow(show => ({...show,showPhoto: true}))}>🖊</button>
       {showPhoto && children}
     </div>
   );

@@ -1,5 +1,5 @@
-const Photo = ({ setShowPhoto, setContact }) => {
-  
+const Photo = ({ setShow, setContact }) => {
+
   const changePhotoHandler = (event) => {
     const photoSource = event.target.src;
     setContact((contact) => ({ ...contact, photo: photoSource }));
@@ -7,7 +7,7 @@ const Photo = ({ setShowPhoto, setContact }) => {
 
   return (
     <div>
-      <button onClick={() => setShowPhoto(false)}>Back</button>
+      <button onClick={() => setShow(show => ({...show,showPhoto: false}))}>Back</button>
       <div>
         <img
           src="../.././public/photos/menPhoto.webp"
