@@ -3,7 +3,7 @@ import { useState } from "react";
 import input from "../../constants/input";
 import Message from "./Message";
 
-const Form = ({setShow, contact, setContact }) => {
+const Form = ({ setShow, contact, setContact }) => {
   const [alert, setAlert] = useState("");
 
   const formHandler = (event) => {
@@ -24,6 +24,7 @@ const Form = ({setShow, contact, setContact }) => {
   const changeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
+
     setContact((contact) => ({ ...contact, [name]: value }));
   };
 
@@ -33,14 +34,17 @@ const Form = ({setShow, contact, setContact }) => {
 
       <form onSubmit={formHandler}>
         {input.map((item, index) => (
-          <input
-            key={index}
-            type={item.type}
-            name={item.name}
-            value={contact[item.name]}
-            placeholder={item.placeholder}
-            onChange={changeHandler}
-          />
+          <div key={index}>
+            <label htmlFor={item.name}>{item.labelName}</label>
+            <input
+              type={item.type}
+              name={item.name}
+              id={item.name}
+              value={contact[item.name]}
+              placeholder={item.placeholder}
+              onChange={changeHandler}
+            />
+          </div>
         ))}
         <button type="submit">Add Contact</button>
         {alert && <Message message={alert} />}
