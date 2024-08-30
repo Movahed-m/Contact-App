@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import input from "../../constants/input";
+import PhotoContainer from "./PhotoContainer";
 
 const Form = ({ setShow, contact, setContact }) => {
   const [alert, setAlert] = useState("");
@@ -17,6 +18,7 @@ const Form = ({ setShow, contact, setContact }) => {
       name: "",
       email: "",
       phone: "",
+      photo: "../../public/photos/unknown.webp",
     });
   };
 
@@ -32,6 +34,7 @@ const Form = ({ setShow, contact, setContact }) => {
       <button onClick={() => setShow(false)}>back</button>
 
       <form onSubmit={formHandler}>
+        <PhotoContainer photo={contact.photo} setContact={setContact} />
         {input.map((item, index) => (
           <div key={index}>
             <label htmlFor={item.name}>{item.labelName}</label>
