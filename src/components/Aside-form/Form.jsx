@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import input from "../../constants/input";
-import Message from "./Message";
 
 const Form = ({ setShow, contact, setContact }) => {
   const [alert, setAlert] = useState("");
@@ -47,7 +46,7 @@ const Form = ({ setShow, contact, setContact }) => {
           </div>
         ))}
         <button type="submit">Add Contact</button>
-        {alert && <Message message={alert} />}
+        {alert && <p>{alert}</p>}
       </form>
     </>
   );
