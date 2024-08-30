@@ -4,7 +4,7 @@ const Photo = ({ setShow, setContact }) => {
   const changePhotoHandler = (event) => {
     const photoSource = event.target.src;
     setContact((contact) => ({ ...contact, photo: photoSource }));
-    setShow((show) => ({ ...show, showPhoto: false }))
+    setShow((show) => ({ ...show, showPhoto: false }));
   };
 
   return (
