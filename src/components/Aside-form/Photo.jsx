@@ -1,4 +1,7 @@
+import { v4 as uuidv4 } from "uuid";
+
 import styles from "../../styles/Aside-form/Photo.module.css";
+import image from "../../constants/Img";
 
 const Photo = ({ setShow, setContact }) => {
   const changePhotoHandler = (event) => {
@@ -15,16 +18,17 @@ const Photo = ({ setShow, setContact }) => {
         Back
       </button>
       <div>
-        <img
-          src="../.././public/photos/menPhoto.webp"
-          alt="Men Photo"
-          onClick={changePhotoHandler}
-        />
-        <img
-          src="../.././public/photos/womenPhoto.webp"
-          alt="Women Photo"
-          onClick={changePhotoHandler}
-        />
+        {image.map((item) => {
+          return (
+            <img
+              src={item.src}
+              alt="profile photos"
+              key={uuidv4()}
+              className={styles["photo-container-img"]}
+              onClick={changePhotoHandler}
+            />
+          );
+        })}
       </div>
     </div>
   );
