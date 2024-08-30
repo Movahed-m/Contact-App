@@ -1,14 +1,9 @@
-import { useState } from "react";
-import Photo from "./Photo";
-
-const PhotoContainer = ({ photo, setContact }) => {
-  const [showPhoto, setShowPhoto] = useState(false);
-
+const PhotoContainer = ({ showPhoto, setShowPhoto, photo, children }) => {
   return (
     <div>
       <img src={photo} alt="photo" />
       <button onClick={() => setShowPhoto(true)}>🖊</button>
-      {showPhoto && <Photo setShowPhoto={setShowPhoto} setContact={setContact}/>}
+      {showPhoto && children}
     </div>
   );
 };

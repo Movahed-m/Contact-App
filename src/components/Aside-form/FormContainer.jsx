@@ -1,9 +1,5 @@
-import { useState } from "react";
-import Form from "./Form";
-
-const FormContainer = ({ contact, setContact }) => {
-  const [show, setShow] = useState(false);
-
+const FormContainer = ({show,setShow,children}) => {
+  
   const showHandler = () => {
     setShow(true);
   };
@@ -13,13 +9,7 @@ const FormContainer = ({ contact, setContact }) => {
         <h3>Add New Contact</h3>
         <button onClick={showHandler}>+</button>
       </div>
-      {show && (
-        <Form
-          setShow={setShow}
-          contact={contact}
-          setContact={setContact}
-        />
-      )}
+      {show && children}
     </>
   );
 };

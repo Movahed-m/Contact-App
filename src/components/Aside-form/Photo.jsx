@@ -1,8 +1,10 @@
-const Photo = ({ setShowPhoto, setContact}) => {
+const Photo = ({ setShowPhoto, setContact }) => {
+  
   const changePhotoHandler = (event) => {
     const photoSource = event.target.src;
-    setContact(contact => ({...contact, photo: photoSource}))
+    setContact((contact) => ({ ...contact, photo: photoSource }));
   };
+
   return (
     <div>
       <button onClick={() => setShowPhoto(false)}>Back</button>
