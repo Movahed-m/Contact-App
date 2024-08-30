@@ -1,0 +1,43 @@
+.photo-container {
+  position: absolute;
+  top: -54px;
+  width: 360px;
+  height: 598px;
+  background-color: #fff;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.photo-container >button {
+    width: 60px;
+    height: 35px;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #ffffff;
+    box-shadow: -3px 3px 10px 2px #d4d4d4;
+    transition: all 0.25s ease-in-out;
+}
+
+.photo-container >button:hover {
+    color: #fff;
+  background-color: #45caff;
+  box-shadow: -3px 3px 10px 2px #3c89a85e;
+}
+
+.photo-container > div {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photo-container div img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    cursor: pointer;
+}

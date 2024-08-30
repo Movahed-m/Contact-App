@@ -1,23 +1,23 @@
-.photo-container {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    position: relative;
+.profile-photo-container {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }
 
-.photo-container img {
-    width: 60px;
-    height: 100%;
-    border-radius: 100%;
+.profile-photo-container > img {
+  width: 60px;
+  height: 100%;
+  border-radius: 100%;
 }
 
-.photo-container button {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 50px;
-    right: 150px;
-    background-color: #ffffff8c;
-    border-radius: 50%;
+.profile-photo-container > button {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50px;
+  right: 150px;
+  background-color: #ffffff8c;
+  border-radius: 50%;
 }

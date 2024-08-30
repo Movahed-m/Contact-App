@@ -2,7 +2,7 @@ import styles from "../../styles/Aside-form/PhotoContainer.module.css";
 
 const PhotoContainer = ({ show: { showPhoto }, setShow, photo, children }) => {
   return (
-    <div className={styles["photo-container"]}>
+    <div className={styles["profile-photo-container"]}>
       <img src={photo} alt="photo" />
       <button
         type="button"
