@@ -21,3 +21,7 @@ body {
   align-items: center;
   background: linear-gradient(20deg,#ff1b6b , #45caff);
 }
+
+button {
+  cursor: pointer;
+}

@@ -19,7 +19,7 @@ function App() {
   });
 
   return (
-    <div className={styles.container}>
+    <div className={styles["container"]}>
       <FormContainer setShow={setShow} show={show}>
         <Form contact={contact} setContact={setContact} setShow={setShow}>
           <PhotoContainer

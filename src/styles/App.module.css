@@ -6,4 +6,5 @@
   border-radius: 20px;
   padding: 30px;
   box-shadow:-7px 11px 28px -3px rgba(69,202,255,1);
+  position: relative;
 }
