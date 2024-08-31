@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import input from "../../constants/input";
 import styles from "../../styles/Aside-form/Form.module.css";
 
-const Form = ({ setShow, contact, setContact, children }) => {
+const Form = ({ setShow, contact, setContact, setContacts, children }) => {
   const [alert, setAlert] = useState("");
 
   const formHandler = (event) => {
@@ -15,9 +16,9 @@ const Form = ({ setShow, contact, setContact, children }) => {
       setAlert("Contact Added Sucssessfully");
       setTimeout(() => setAlert(""), 2000);
     }
-
-    console.log(contact);
+    setContacts((contacts) => [...contacts, contact]);
     setContact({
+      id: "",
       name: "",
       email: "",
       phone: "",
@@ -29,12 +30,15 @@ const Form = ({ setShow, contact, setContact, children }) => {
     const name = event.target.name;
     const value = event.target.value;
 
-    setContact((contact) => ({ ...contact, [name]: value }));
+    setContact((contact) => ({ ...contact, [name]: value, id: uuidv4() }));
   };
 
   return (
     <div className={styles["inner-form-container"]}>
-      <button onClick={() => setShow((show) => ({ ...show, showForm: false }))} className={styles["form-button"]}>
+      <button
+        onClick={() => setShow((show) => ({ ...show, showForm: false }))}
+        className={styles["form-button"]}
+      >
         back
       </button>
 
@@ -54,7 +58,17 @@ const Form = ({ setShow, contact, setContact, children }) => {
           </div>
         ))}
         <button type="submit">Add Contact</button>
-        {alert && <p className={alert === "Please Inter Valid Data!" ? styles["error-message"]: styles["sucesses-message"]}>{alert}</p>}
+        {alert && (
+          <p
+            className={
+              alert === "Please Inter Valid Data!"
+                ? styles["error-message"]
+                : styles["sucesses-message"]
+            }
+          >
+            {alert}
+          </p>
+        )}
       </form>
     </div>
   );
