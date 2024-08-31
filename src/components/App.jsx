@@ -22,18 +22,29 @@ function App() {
   });
 
   const [contacts, setContacts] = useState([]);
+  const [searchedContacts, setSearchedContacts] = useState([...contacts]);
+  const [isSearch, setIsSearch] = useState(false);
 
   return (
     <div className={styles["container"]}>
       <FormContainer setShow={setShow} show={show}>
-        <Form contact={contact} setContact={setContact} setShow={setShow} setContacts={setContacts}>
+        <Form
+          contact={contact}
+          setContact={setContact}
+          setShow={setShow}
+          setContacts={setContacts}
+        >
           <PhotoContainer photo={contact.photo} show={show} setShow={setShow}>
             <Photo setShow={setShow} setContact={setContact} />
           </PhotoContainer>
         </Form>
       </FormContainer>
-      <MainContainer>
-        <ContactList contacts={contacts}></ContactList>
+      <MainContainer
+        setSearchedContacts={setSearchedContacts}
+        contacts={contacts}
+        setIsSearch={setIsSearch}
+      >
+        <ContactList contacts={!isSearch ? contacts : searchedContacts}></ContactList>
       </MainContainer>
     </div>
   );
