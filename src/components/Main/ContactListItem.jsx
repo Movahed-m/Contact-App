@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ContactListItem = ({ contact }) => {
+const ContactListItem = ({ contact , selecteAll }) => {
   const [copyText, setCopyText] = useState("");
   const [copyAlert, setCopyAlert] = useState("");
 
@@ -16,6 +16,7 @@ const ContactListItem = ({ contact }) => {
   return (
     <>
       <li>
+        <input type="checkbox" checked={selecteAll}/>
         <img
           src={contact.photo}
           alt="profile photo"
