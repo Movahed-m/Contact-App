@@ -44,7 +44,7 @@ function App() {
         contacts={contacts}
         setIsSearch={setIsSearch}
       >
-        <ContactList contacts={!isSearch ? contacts : searchedContacts}></ContactList>
+        <ContactList contacts={!isSearch ? contacts : searchedContacts} setContacts={setContacts}></ContactList>
       </MainContainer>
     </div>
   );

@@ -1,28 +1,49 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import ContactListItem from "./ContactListItem";
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, setContacts }) => {
   const [selecteAll, setSelecteAll] = useState(false);
+  const [alert, setAlert] = useState("");
+  const [isShow, setIsShow] = useState(false);
 
-  const selecteHandler = () => setSelecteAll((selecteAll) => !selecteAll);
-  const deleteHandler = () => {}
+  const exitHandler = () => {
+    setIsShow(false);
+    setSelecteAll(false);
+  };
+
+  const deleteHandler = () => {
+    setContacts([]);
+    setAlert("All Contacts delete successfully ✔");
+    setIsShow(false);
+  };
 
   return (
     <div>
       <div>
-        <button onClick={selecteHandler}>
+        <button onClick={() => setSelecteAll(true)}>
           {selecteAll ? "Selected" : "Selecte All"}
         </button>
-        <button onClick={deleteHandler}>{selecteAll && "Delete All"}</button>
+        <button onClick={() => setIsShow(true)}>
+          {selecteAll && "Delete All"}
+        </button>
+        {isShow && (
+          <div>
+            <p>Are you want to delete all contacts?</p>
+            <button onClick={deleteHandler}>Yes</button>
+            <button onClick={exitHandler}>No</button>
+          </div>
+        )}
+        <p>{alert && alert}</p>
       </div>
       <ul>
-        {contacts.map((item) => (
-          <ContactListItem
-            key={item.id}
-            contact={item}
-            selecteAll={selecteAll}
-          />
-        ))}
+        {contacts &&
+          contacts.map((item) => (
+            <div key={item.id}>
+              <input type="checkbox" checked={selecteAll} />
+              <ContactListItem contact={item} selecteAll={selecteAll} />
+            </div>
+          ))}
       </ul>
     </div>
   );
