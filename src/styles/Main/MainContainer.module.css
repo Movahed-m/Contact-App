@@ -1,11 +1,12 @@
 .main {
-  width: 50%;
+  width: calc(75% - 30px);
   height: 100%;
   margin-left: 30px;
   display: flex;
   flex-direction: column;
   background-color: #ffffffa1;
   border-radius: 12px;
+  overflow: hidden;
 }
 
 .header {
@@ -28,9 +29,14 @@
 }
 
 .header > input {
-    width: 400px;
-    height: 50px;
-    margin: auto 20px;
-    padding: 10px 20px;
-    border-radius: 40px;
+  width: 400px;
+  height: 50px;
+  margin: auto 20px;
+  padding: 10px 20px;
+  border-radius: 40px;
+  outline: none;
+}
+
+.header > input:focus {
+  box-shadow: -4px 4px 12px 2px #e2e1e1;
 }

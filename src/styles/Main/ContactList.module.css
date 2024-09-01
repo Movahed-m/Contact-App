@@ -1,0 +1,121 @@
+.contact-list-container {
+  width: calc(100% - 40px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.contact-list-options {
+  width: 70%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.contact-list-options .button {
+  width: 90px;
+  height: 40px;
+  margin-right: 20px;
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+}
+
+.contact-list-options .selecte-button {
+  width: 90px;
+  height: 40px;
+  margin-right: 20px;
+  border-radius: 12px;
+  background: #1ae527;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-list-options .delete-button {
+  width: 90px;
+  height: 40px;
+  margin-right: 20px;
+  border-radius: 12px;
+  background: red;
+  color: #fff;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.modal-container {
+  position: absolute;
+  top: 180px;
+  left: 135px;
+  width: 20.5vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+.modal-container > p {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.modal-container > div {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-container > div > button {
+  width: 60px;
+  height: 40px;
+  border-radius: 8px;
+  margin: 0 10px;
+}
+
+.modal-container > div > button:first-child {
+  background-color: #1ae527;
+  color: #fff;
+}
+
+.contact-list-options .delete-message {
+  position: absolute;
+  top: 240px;
+  left: 210px;
+  width: 320px;
+  height: 80px;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #1ae527;
+  line-height: 80px;
+  text-align: center;
+  z-index: 100;
+}
+
+.contact-list-container > ul {
+  width: 70%;
+  height: 82%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  border: 2px solid #ffffffbb;
+}
+
+.contact-list-container > ul > p {
+  width: 205px;
+  height: 60px;
+  line-height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 46%;
+  font-size: 1.3rem;
+}
