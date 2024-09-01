@@ -6,6 +6,8 @@ import Photo from "./Aside-form/Photo";
 import styles from "../styles/App.module.css";
 import MainContainer from "./Main/MainContainer";
 import ContactList from "./Main/ContactList";
+import Contact from "./Main/Contact";
+import ContactListItem from "./Main/ContactListItem";
 
 function App() {
   const [show, setShow] = useState({
@@ -24,6 +26,7 @@ function App() {
   const [contacts, setContacts] = useState([]);
   const [searchedContacts, setSearchedContacts] = useState([...contacts]);
   const [isSearch, setIsSearch] = useState(false);
+  const [selectedContact, setSelectedContact] = useState("");
 
   return (
     <div className={styles["container"]}>
@@ -44,7 +47,13 @@ function App() {
         contacts={contacts}
         setIsSearch={setIsSearch}
       >
-        <ContactList contacts={!isSearch ? contacts : searchedContacts} setContacts={setContacts}></ContactList>
+        <ContactList
+          contacts={!isSearch ? contacts : searchedContacts}
+          setContacts={setContacts}
+          setSelectedContact={setSelectedContact}
+        >
+        </ContactList>
+        <Contact selectedContact={selectedContact} setContacts={setContacts} contacts={contacts}></Contact>
       </MainContainer>
     </div>
   );

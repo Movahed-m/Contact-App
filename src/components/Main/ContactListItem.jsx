@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ContactListItem = ({ contact }) => {
+const ContactListItem = ({ contact, setSelectedContact }) => {
   const [copyText, setCopyText] = useState("");
   const [copyAlert, setCopyAlert] = useState("");
 
@@ -15,7 +15,7 @@ const ContactListItem = ({ contact }) => {
 
   return (
     <>
-      <li>
+      <li onClick={() => (setSelectedContact(contact))}>
         <img
           src={contact.photo}
           alt="profile photo"

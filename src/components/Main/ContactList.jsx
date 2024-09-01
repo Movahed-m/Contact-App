@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import ContactListItem from "./ContactListItem";
 
-const ContactList = ({ contacts, setContacts }) => {
+const ContactList = ({ contacts, setContacts, setSelectedContact}) => {
   const [selecteAll, setSelecteAll] = useState(false);
   const [alert, setAlert] = useState("");
   const [isShow, setIsShow] = useState(false);
@@ -41,7 +40,7 @@ const ContactList = ({ contacts, setContacts }) => {
           contacts.map((item) => (
             <div key={item.id}>
               <input type="checkbox" checked={selecteAll} />
-              <ContactListItem contact={item} selecteAll={selecteAll} />
+              <ContactListItem contact={item} selecteAll={selecteAll} setSelectedContact={setSelectedContact}/>
             </div>
           ))}
       </ul>
