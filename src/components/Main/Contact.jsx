@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "../../styles/Main/Contact.module.css";
 
 const Contact = ({ selectedContact, setContacts, contacts }) => {
   const [isShow, setIsShow] = useState(false);
@@ -11,6 +12,7 @@ const Contact = ({ selectedContact, setContacts, contacts }) => {
     setContacts(contacts.filter((item) => item !== selectedContact));
     setIsShow(false);
     setIsContactShow(false);
+    setSele;
   };
 
   const copyHandler = (event) => {
@@ -24,25 +26,25 @@ const Contact = ({ selectedContact, setContacts, contacts }) => {
   return (
     <>
       {isContactShow && (
-        <div>
+        <div className={styles["contact-information-container"]}>
           <img src={photo} style={{ width: "50px" }} />
           <h3>{name}</h3>
-          <p>Email: </p>
           <span onClick={copyHandler}>{email}</span>
-          <p>Phoen Number: </p>
           <span onClick={copyHandler}>{phone}</span>
           <p>{copyAlert}</p>
           <div>
-            <button onClick={() => setIsShow(true)}>Delete Contact</button>
-            <button>Edit</button>
+            <div>
+              <button onClick={() => setIsShow(true)}>Delete Contact</button>
+              <button>Edit</button>
+            </div>
+            {isShow && (
+              <div>
+                <p>Are You want to delete the Contact?</p>
+                <button onClick={deleteHandler}>Yes</button>
+                <button onClick={() => setIsShow(false)}>No</button>
+              </div>
+            )}
           </div>
-        </div>
-      )}
-      {isShow && (
-        <div>
-          <p>Are You want to delete the Contact?</p>
-          <button onClick={deleteHandler}>Yes</button>
-          <button onClick={() => setIsShow(false)}>No</button>
         </div>
       )}
     </>

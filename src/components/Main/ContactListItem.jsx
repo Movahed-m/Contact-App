@@ -10,7 +10,6 @@ const ContactListItem = ({ contact, setSelectedContact }) => {
         <img
           src={contact.photo}
           alt="profile photo"
-          style={{ width: "50px" }}
         />
         <span>{contact.name}</span>
         <span>{contact.email}</span>

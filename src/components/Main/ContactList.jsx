@@ -19,6 +19,7 @@ const ContactList = ({ contacts, setContacts, setSelectedContact }) => {
       setAlert("");
     }, 2000);
     setIsShow(false);
+    setSelectedContact(false)
   };
 
   return (
