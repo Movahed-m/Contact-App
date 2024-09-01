@@ -7,9 +7,10 @@ const ContactListItem = ({ contact, setSelectedContact }) => {
           alt="profile photo"
           style={{ width: "50px" }}
         />
-        <span>{contact.name}</span>
-        <span>{contact.email}</span>
-        <span>{contact.phone}</span>
+        <div>
+          <span>{contact.name}</span>
+          <span>{contact.email}</span>
+        </div>
       </li>
     </>
   );
