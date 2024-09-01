@@ -45,6 +45,7 @@ const ContactList = ({ contacts, setContacts }) => {
             </div>
           ))}
       </ul>
+      <p>{!contacts.length && "No Contact Added Yet"}</p>
     </div>
   );
 };
