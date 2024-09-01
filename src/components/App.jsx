@@ -53,7 +53,7 @@ function App() {
           setSelectedContact={setSelectedContact}
         >
         </ContactList>
-        {/* <Contact selectedContact={selectedContact} setContacts={setContacts} contacts={contacts}></Contact> */}
+        <Contact selectedContact={selectedContact} setContacts={setContacts} contacts={contacts}></Contact>
       </MainContainer>
     </div>
   );
