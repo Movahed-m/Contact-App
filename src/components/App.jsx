@@ -27,6 +27,7 @@ function App() {
   const [searchedContacts, setSearchedContacts] = useState([...contacts]);
   const [isSearch, setIsSearch] = useState(false);
   const [selectedContact, setSelectedContact] = useState("");
+  const [idOfSelectedContacts, setIdOfSelectedContacts] = useState(new Set([]))
 
   return (
     <div className={styles["container"]}>
@@ -51,7 +52,8 @@ function App() {
           contacts={!isSearch ? contacts : searchedContacts}
           setContacts={setContacts}
           setSelectedContact={setSelectedContact}
-          
+          idOfSelectedContacts={idOfSelectedContacts}
+          setIdOfSelectedContacts={setIdOfSelectedContacts}
         >
         </ContactList>
         {selectedContact && <Contact selectedContact={selectedContact} setContacts={setContacts} contacts={contacts}></Contact>}
