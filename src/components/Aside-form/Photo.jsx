@@ -4,6 +4,7 @@ import styles from "../../styles/Aside-form/Photo.module.css";
 import image from "../../constants/Img";
 
 const Photo = ({ setShow, setContact }) => {
+  
   const changePhotoHandler = (event) => {
     const photoSource = event.target.src;
     setContact((contact) => ({ ...contact, photo: photoSource }));

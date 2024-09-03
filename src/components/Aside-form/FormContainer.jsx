@@ -1,6 +1,8 @@
 import styles from "../../styles/Aside-form/FormContainer.module.css";
 
-const FormContainer = ({ show: { showForm }, setShow, children }) => {
+const FormContainer = (props) => {
+  const { show: { showForm }, setShow, children } = props;
+
   const showHandler = () => {
     setShow((show) => ({ ...show, showForm: true }));
   };

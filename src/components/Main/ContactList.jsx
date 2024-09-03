@@ -2,14 +2,16 @@ import { useState } from "react";
 import ContactListItem from "./ContactListItem";
 import styles from "../../styles/Main/ContactList.module.css";
 
-const ContactList = ({
-  contacts,
-  setContacts,
-  setSelectedContact,
-  setIdOfSelectedContacts,
-  idOfSelectedContacts,
-  setAlert,
-}) => {
+const ContactList = (props) => {
+  const {
+    contacts,
+    setContacts,
+    setSelectedContact,
+    setIdOfSelectedContacts,
+    idOfSelectedContacts,
+    setAlert,
+  } = props;
+
   const [selected, setSelected] = useState(false);
   const [isShow, setIsShow] = useState(false);
 
@@ -20,7 +22,10 @@ const ContactList = ({
 
   const selecteHandler = () => {
     if (!contacts.length) {
-      setAlert({typeOfAlert: "error", description: "No contact added yet! Please first add a new contact"});
+      setAlert({
+        typeOfAlert: "error",
+        description: "No contact added yet! Please first add a new contact",
+      });
       return;
     }
     setSelected(true);
@@ -40,7 +45,10 @@ const ContactList = ({
     setContacts((contacts) =>
       contacts.filter((contact) => !idOfSelectedContacts.has(contact.id))
     );
-    setAlert({typeOfAlert: "success", description: "Selected Contacts delete successfully ✔"});
+    setAlert({
+      typeOfAlert: "success",
+      description: "Selected Contacts delete successfully ✔",
+    });
     setIsShow(false);
     setSelectedContact(false);
     setSelected(false);

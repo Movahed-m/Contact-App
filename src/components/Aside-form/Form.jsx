@@ -3,19 +3,22 @@ import { v4 as uuidv4 } from "uuid";
 import input from "../../constants/input";
 import styles from "../../styles/Aside-form/Form.module.css";
 
-const Form = ({ setShow, contact, setContact, setContacts, children , setAlert}) => {
-
+const Form = (props) => {
+  const { setShow, contact, setContact, setContacts, children, setAlert } =props;
+  
   const formHandler = (event) => {
     event.preventDefault();
     if (!contact.name || !contact.email || !contact.phone) {
       setAlert({
-        typeOfAlert : "error", 
-        description: "Pleade inter valid data !"});
+        typeOfAlert: "error",
+        description: "Pleade inter valid data !",
+      });
       return;
     } else {
       setAlert({
-        typeOfAlert : "success", 
-        description: "New Contact added successfully ✔"});
+        typeOfAlert: "success",
+        description: "New Contact added successfully ✔",
+      });
     }
     setContacts((contacts) => [...contacts, contact]);
     setContact({

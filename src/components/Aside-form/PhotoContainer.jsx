@@ -1,6 +1,8 @@
 import styles from "../../styles/Aside-form/PhotoContainer.module.css";
 
-const PhotoContainer = ({ show: { showPhoto }, setShow, photo, children }) => {
+const PhotoContainer = (props) => {
+const { show: { showPhoto }, setShow, photo, children } = props;
+
   return (
     <div className={styles["profile-photo-container"]}>
       <img src={photo} alt="photo" />

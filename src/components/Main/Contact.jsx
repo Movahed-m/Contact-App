@@ -1,7 +1,9 @@
 import { useState } from "react";
 import styles from "../../styles/Main/Contact.module.css";
 
-const Contact = ({ selectedContact, setContacts, contacts, setAlert }) => {
+const Contact = (props) => {
+  const { selectedContact, setContacts, contacts, setAlert } = props;
+
   const [isShow, setIsShow] = useState(false);
   const [isContactShow, setIsContactShow] = useState(true);
 

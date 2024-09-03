@@ -1,11 +1,8 @@
 import styles from "../../styles/Main/MainContainer.module.css";
 
-const MainContainer = ({
-  children,
-  setSearchedContacts,
-  contacts,
-  setIsSearch,
-}) => {
+const MainContainer = (props) => {
+  const { children, setSearchedContacts, contacts, setIsSearch } = props;
+  
   const searchHandler = (event) => {
     const value = event.target.value;
     setSearchedContacts(
