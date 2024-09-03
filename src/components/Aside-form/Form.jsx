@@ -1,11 +1,9 @@
-import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import input from "../../constants/input";
 import styles from "../../styles/Aside-form/Form.module.css";
 
 const Form = ({ setShow, contact, setContact, setContacts, children , setAlert}) => {
-  // const [alert, setAlert] = useState("");
 
   const formHandler = (event) => {
     event.preventDefault();

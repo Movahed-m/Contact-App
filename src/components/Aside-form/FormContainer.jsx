@@ -9,8 +9,8 @@ const FormContainer = ({ show: { showForm }, setShow, children }) => {
       <div className={styles["form-container"]}>
         <h3>Add New Contact</h3>
         <button onClick={showHandler} className={showForm ? styles["show-form"] : styles["form-container-button"]}>+</button>
+        {showForm && children}
       </div>
-      {showForm && children}
     </>
   );
 };
