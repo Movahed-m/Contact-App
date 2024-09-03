@@ -26,12 +26,6 @@
     cursor: pointer;
 }
 
-.contact-information-container > p {
-    margin: 10px;
-    height: 20px;
-    color: #1ae527;
-}
-
 .contact-information-container > div {
     width: 100%;
     height: 185px;

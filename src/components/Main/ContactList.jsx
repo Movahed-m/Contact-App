@@ -8,9 +8,9 @@ const ContactList = ({
   setSelectedContact,
   setIdOfSelectedContacts,
   idOfSelectedContacts,
+  setAlert,
 }) => {
   const [selected, setSelected] = useState(false);
-  const [alert, setAlert] = useState("");
   const [isShow, setIsShow] = useState(false);
 
   const exitHandler = () => {
@@ -20,10 +20,7 @@ const ContactList = ({
 
   const selecteHandler = () => {
     if (!contacts.length) {
-      setAlert("No contact added yet! Please first add a new contact");
-      setTimeout(() => {
-        setAlert("");
-      }, 2000);
+      setAlert({typeOfAlert: "error", description: "No contact added yet! Please first add a new contact"});
       return;
     }
     setSelected(true);
@@ -43,10 +40,7 @@ const ContactList = ({
     setContacts((contacts) =>
       contacts.filter((contact) => !idOfSelectedContacts.has(contact.id))
     );
-    setAlert("Selected Contacts delete successfully ✔");
-    setTimeout(() => {
-      setAlert("");
-    }, 2000);
+    setAlert({typeOfAlert: "success", description: "Selected Contacts delete successfully ✔"});
     setIsShow(false);
     setSelectedContact(false);
     setSelected(false);
@@ -59,7 +53,7 @@ const ContactList = ({
           onClick={selecteHandler}
           className={selected ? styles["selecte-button"] : styles["button"]}
         >
-         Select
+          Select
         </button>
         <button
           onClick={() => setIsShow(true)}
@@ -76,9 +70,6 @@ const ContactList = ({
             </div>
           </div>
         )}
-        <p className={alert ? styles["delete-message"] : styles["hide"]}>
-          {alert && alert}
-        </p>
       </div>
       <ul>
         {contacts &&

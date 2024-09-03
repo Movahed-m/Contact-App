@@ -87,20 +87,6 @@
   color: #fff;
 }
 
-.contact-list-options .delete-message {
-  position: absolute;
-  top: 240px;
-  left: 210px;
-  width: 320px;
-  height: 80px;
-  border-radius: 8px;
-  background-color: #fff;
-  color: #1ae527;
-  line-height: 80px;
-  text-align: center;
-  z-index: 100;
-}
-
 .contact-list-container > ul {
   width: 70%;
   height: 82%;
@@ -117,8 +103,6 @@
   align-items: center;
   padding: 10px;
 }
-
-
 
 .contact-list-container > ul > p {
   width: 205px;

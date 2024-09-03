@@ -1,15 +1,18 @@
 import { useState } from "react";
 import styles from "../../styles/Main/Contact.module.css";
 
-const Contact = ({ selectedContact, setContacts, contacts }) => {
+const Contact = ({ selectedContact, setContacts, contacts, setAlert }) => {
   const [isShow, setIsShow] = useState(false);
   const [isContactShow, setIsContactShow] = useState(true);
-  const [copyAlert, setCopyAlert] = useState("");
 
   const { name, email, phone, photo } = selectedContact;
 
   const deleteHandler = () => {
     setContacts(contacts.filter((item) => item !== selectedContact));
+    setAlert({
+      typeOfAlert: "success",
+      description: "Contact deleted successfully ✔",
+    });
     setIsShow(false);
     setIsContactShow(false);
     setSele;
@@ -17,10 +20,7 @@ const Contact = ({ selectedContact, setContacts, contacts }) => {
 
   const copyHandler = (event) => {
     window.navigator.clipboard.writeText(event.target.innerText);
-    setCopyAlert("Copy into Clipboard ✔");
-    setTimeout(() => {
-      setCopyAlert(false);
-    }, 2000);
+    setAlert({ typeOfAlert: "success", description: "Copy into Clipboard ✔" });
   };
 
   return (
@@ -31,7 +31,6 @@ const Contact = ({ selectedContact, setContacts, contacts }) => {
           <h3>{name}</h3>
           <span onClick={copyHandler}>{email}</span>
           <span onClick={copyHandler}>{phone}</span>
-          <p>{copyAlert}</p>
           <div>
             <div>
               <button onClick={() => setIsShow(true)}>Delete Contact</button>

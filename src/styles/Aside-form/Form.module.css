@@ -69,22 +69,3 @@
 .inner-form-container form > button:hover {
   box-shadow: 0 0 30px 1px #1ae527;
 }
-
-.inner-form-container form p {
-  width: 90%;
-  height: 40px;
-  line-height: 40px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.3rem;
-}
-
-.error-message {
-  background-color: #fd9c9c;
-  color: #ff0000;
-}
-
-.sucesses-message {
-  background-color: #99c5ba;
-  color: #15ff00;
-}

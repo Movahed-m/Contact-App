@@ -7,14 +7,13 @@ import styles from "../styles/App.module.css";
 import MainContainer from "./Main/MainContainer";
 import ContactList from "./Main/ContactList";
 import Contact from "./Main/Contact";
-import ContactListItem from "./Main/ContactListItem";
+import Message from "./Message";
 
 function App() {
   const [show, setShow] = useState({
     showForm: false,
     showPhoto: false,
   });
-
   const [contact, setContact] = useState({
     id: "",
     name: "",
@@ -22,12 +21,15 @@ function App() {
     phone: "",
     photo: "../../public/photos/unknown.webp",
   });
-
   const [contacts, setContacts] = useState([]);
   const [searchedContacts, setSearchedContacts] = useState([...contacts]);
   const [isSearch, setIsSearch] = useState(false);
   const [selectedContact, setSelectedContact] = useState("");
-  const [idOfSelectedContacts, setIdOfSelectedContacts] = useState(new Set([]))
+  const [idOfSelectedContacts, setIdOfSelectedContacts] = useState(new Set([]));
+  const [alert, setAlert] = useState({
+    typeOfAlert: "",
+    description: "",
+  });
 
   return (
     <div className={styles["container"]}>
@@ -37,6 +39,8 @@ function App() {
           setContact={setContact}
           setShow={setShow}
           setContacts={setContacts}
+          alert={alert}
+          setAlert={setAlert}
         >
           <PhotoContainer photo={contact.photo} show={show} setShow={setShow}>
             <Photo setShow={setShow} setContact={setContact} />
@@ -54,10 +58,18 @@ function App() {
           setSelectedContact={setSelectedContact}
           idOfSelectedContacts={idOfSelectedContacts}
           setIdOfSelectedContacts={setIdOfSelectedContacts}
-        >
-        </ContactList>
-        {selectedContact && <Contact selectedContact={selectedContact} setContacts={setContacts} contacts={contacts}></Contact>}
+          setAlert={setAlert}
+        ></ContactList>
+        {selectedContact && (
+          <Contact
+            selectedContact={selectedContact}
+            setContacts={setContacts}
+            contacts={contacts}
+            setAlert={setAlert}
+          ></Contact>
+        )}
       </MainContainer>
+      <Message alert={alert} setAlert={setAlert} />
     </div>
   );
 }

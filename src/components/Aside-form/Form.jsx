@@ -4,17 +4,20 @@ import { v4 as uuidv4 } from "uuid";
 import input from "../../constants/input";
 import styles from "../../styles/Aside-form/Form.module.css";
 
-const Form = ({ setShow, contact, setContact, setContacts, children }) => {
-  const [alert, setAlert] = useState("");
+const Form = ({ setShow, contact, setContact, setContacts, children , setAlert}) => {
+  // const [alert, setAlert] = useState("");
 
   const formHandler = (event) => {
     event.preventDefault();
     if (!contact.name || !contact.email || !contact.phone) {
-      setAlert("Please Inter Valid Data!");
+      setAlert({
+        typeOfAlert : "error", 
+        description: "Pleade inter valid data !"});
       return;
     } else {
-      setAlert("Contact Added Sucssessfully");
-      setTimeout(() => setAlert(""), 2000);
+      setAlert({
+        typeOfAlert : "success", 
+        description: "New Contact added successfully ✔"});
     }
     setContacts((contacts) => [...contacts, contact]);
     setContact({
@@ -58,17 +61,6 @@ const Form = ({ setShow, contact, setContact, setContacts, children }) => {
           </div>
         ))}
         <button type="submit">Add Contact</button>
-        {alert && (
-          <p
-            className={
-              alert === "Please Inter Valid Data!"
-                ? styles["error-message"]
-                : styles["sucesses-message"]
-            }
-          >
-            {alert}
-          </p>
-        )}
       </form>
     </div>
   );
