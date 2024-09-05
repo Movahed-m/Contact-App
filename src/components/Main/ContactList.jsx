@@ -31,6 +31,15 @@ const ContactList = (props) => {
     setSelected(true);
   };
 
+  const deleteButtonHandler = () => {
+    !idOfSelectedContacts.length
+      ? setAlert({
+          typeOfAlert: "error",
+          description: "You must be select a Contact at first!",
+        })
+      : setIsShow(true);
+  };
+
   const inputHandler = (event) => {
     const inputChecked = event.target.checked;
     const inputId = event.target.dataset.itemId;
@@ -64,7 +73,8 @@ const ContactList = (props) => {
           Select
         </button>
         <button
-          onClick={() => setIsShow(true)}
+          // onClick={() => setIsShow(true)}
+          onClick={deleteButtonHandler}
           className={selected ? styles["delete-button"] : styles["hide"]}
         >
           {selected && "Delete"}
