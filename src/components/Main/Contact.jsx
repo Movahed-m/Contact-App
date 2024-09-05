@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "../../styles/Main/Contact.module.css";
 
 const Contact = (props) => {
-  const { selectedContact, setContacts, contacts, setAlert, children } = props;
+  const { selectedContact, setContacts, contacts, setAlert } = props;
 
   const [isShow, setIsShow] = useState(false);
   const [isContactShow, setIsContactShow] = useState(true);
@@ -36,7 +36,6 @@ const Contact = (props) => {
           <div>
             <div>
               <button onClick={() => setIsShow(true)}>Delete Contact</button>
-              <button>Edit</button>
             </div>
             {isShow && (
               <div>
@@ -46,7 +45,6 @@ const Contact = (props) => {
               </div>
             )}
           </div>
-          {children}
         </div>
       )}
     </>

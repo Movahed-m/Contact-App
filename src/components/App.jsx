@@ -8,7 +8,6 @@ import MainContainer from "./Main/MainContainer";
 import ContactList from "./Main/ContactList";
 import Contact from "./Main/Contact";
 import Message from "./Message";
-import EditContact from "./Main/EditContact";
 
 function App() {
   const [show, setShow] = useState({
@@ -26,7 +25,7 @@ function App() {
   const [searchedContacts, setSearchedContacts] = useState([...contacts]);
   const [isSearch, setIsSearch] = useState(false);
   const [selectedContact, setSelectedContact] = useState("");
-  const [idOfSelectedContacts, setIdOfSelectedContacts] = useState(new Set([]));
+  const [idOfSelectedContacts, setIdOfSelectedContacts] = useState(new Set());
   const [alert, setAlert] = useState({
     typeOfAlert: "",
     description: "",
@@ -67,12 +66,7 @@ function App() {
             setContacts={setContacts}
             contacts={contacts}
             setAlert={setAlert}
-          >
-            <EditContact
-              selectedContact={selectedContact}
-              setContacts={setContacts}
-            />
-          </Contact>
+          />
         )}
       </MainContainer>
       <Message alert={alert} setAlert={setAlert} />

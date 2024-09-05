@@ -32,7 +32,7 @@ const ContactList = (props) => {
   };
 
   const deleteButtonHandler = () => {
-    !idOfSelectedContacts.length
+    !idOfSelectedContacts.size
       ? setAlert({
           typeOfAlert: "error",
           description: "You must be select a Contact at first!",
@@ -43,11 +43,13 @@ const ContactList = (props) => {
   const inputHandler = (event) => {
     const inputChecked = event.target.checked;
     const inputId = event.target.dataset.itemId;
+    const newSet= new Set(idOfSelectedContacts)
     if (inputChecked) {
-      setIdOfSelectedContacts(idOfSelectedContacts.add(inputId));
+      newSet.add(inputId);
     } else {
-      setIdOfSelectedContacts(idOfSelectedContacts.delete(inputId));
+      newSet.delete(inputId);
     }
+    setIdOfSelectedContacts(newSet)
   };
 
   const deleteHandler = () => {
