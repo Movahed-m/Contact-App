@@ -8,6 +8,8 @@ import MainContainer from "./Main/MainContainer";
 import ContactList from "./Main/ContactList";
 import Contact from "./Main/Contact";
 import Message from "./Message";
+import EditComponent from "./Main/EditComponent";
+import ContactListItem from "./Main/ContactListItem";
 
 function App() {
   const [show, setShow] = useState({
@@ -30,6 +32,14 @@ function App() {
     typeOfAlert: "",
     description: "",
   });
+  const[isEditDoing, setIsEditDoing]= useState(false);
+  const [newContact, setNewContact] = useState({
+    id:"",
+    name:"",
+    email:"",
+    phone:"",
+    photo:"",
+  })
 
   return (
     <div className={styles["container"]}>
@@ -59,14 +69,26 @@ function App() {
           idOfSelectedContacts={idOfSelectedContacts}
           setIdOfSelectedContacts={setIdOfSelectedContacts}
           setAlert={setAlert}
-        ></ContactList>
+          isEditDoing={isEditDoing}
+        />
         {selectedContact && (
           <Contact
             selectedContact={selectedContact}
             setContacts={setContacts}
             contacts={contacts}
             setAlert={setAlert}
-          />
+            setIsEditDoing={setIsEditDoing}
+            isEditDoing={isEditDoing}
+          >
+            <EditComponent
+              selectedContact={selectedContact}
+              setSelectedContact={setSelectedContact}
+              setContacts={setContacts}
+              newContact={newContact}
+              setNewContact={setNewContact}
+              setIsEditDoing={setIsEditDoing}
+            />
+          </Contact>
         )}
       </MainContainer>
       <Message alert={alert} setAlert={setAlert} />

@@ -10,6 +10,7 @@ const ContactList = (props) => {
     setIdOfSelectedContacts,
     idOfSelectedContacts,
     setAlert,
+    isEditDoing,
   } = props;
 
   const [selected, setSelected] = useState(false);
@@ -105,6 +106,8 @@ const ContactList = (props) => {
                 contact={item}
                 selected={selected}
                 setSelectedContact={setSelectedContact}
+                isEditDoing={isEditDoing}
+                setAlert={setAlert}
               />
             </div>
           ))}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "../../styles/Main/Contact.module.css";
 
 const Contact = (props) => {
-  const { selectedContact, setContacts, contacts, setAlert } = props;
+  const { selectedContact, setContacts, contacts, setAlert, children, setIsEditDoing, isEditDoing } = props;
 
   const [isShow, setIsShow] = useState(false);
   const [isContactShow, setIsContactShow] = useState(true);
@@ -20,6 +20,10 @@ const Contact = (props) => {
     setSele;
   };
 
+  const editHandler = () => {
+    setIsEditDoing(true)
+  }
+
   const copyHandler = (event) => {
     window.navigator.clipboard.writeText(event.target.innerText);
     setAlert({ typeOfAlert: "success", description: "Copy into Clipboard ✔" });
@@ -34,17 +38,17 @@ const Contact = (props) => {
           <span onClick={copyHandler}>{email}</span>
           <span onClick={copyHandler}>{phone}</span>
           <div>
-            <div>
-              <button onClick={() => setIsShow(true)}>Delete Contact</button>
-            </div>
-            {isShow && (
-              <div>
-                <p>Are You want to delete the Contact?</p>
-                <button onClick={deleteHandler}>Yes</button>
-                <button onClick={() => setIsShow(false)}>No</button>
-              </div>
-            )}
+            <button onClick={() => setIsShow(true)}>Delete Contact</button>
+            <button onClick={editHandler}>Edit Contact</button>
           </div>
+          {isShow && (
+            <div>
+              <p>Are You want to delete the Contact?</p>
+              <button onClick={deleteHandler}>Yes</button>
+              <button onClick={() => setIsShow(false)}>No</button>
+            </div>
+          )}
+          {isEditDoing && children}
         </div>
       )}
     </>
