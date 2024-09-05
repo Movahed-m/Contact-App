@@ -1,7 +1,6 @@
 import styles from "../styles/Message.module.css";
 
 const Message = ({ alert, setAlert }) => {
-    console.log(styles)
   const alertHandler = () =>
     alert.description &&
     setTimeout(() => setAlert({ typeOfAlert: "", description: "" }), 2000);
