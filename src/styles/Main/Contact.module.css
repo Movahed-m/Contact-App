@@ -1,44 +1,78 @@
 .contact-information-container {
-    position: absolute;
-    right: 20px;
-    width: 28%;
-    height: 72%;
-    border: 2px solid #ffffffbb;
-    top: 161px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: absolute;
+  right: 20px;
+  width: 28%;
+  height: 72%;
+  border: 2px solid #ffffffbb;
+  top: 161px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 
 .contact-information-container > img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 30px 0;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 30px;
+  align-self: flex-start;
+}
+
+.contact-information-container > h3 {
+  align-self: flex-start;
+  padding: 0 10px;
 }
 
 .contact-information-container > span {
-    height: 35px;
-    line-height: 50px;
+  width: 100%;
+  height: 35px;
+  line-height: 50px;
+  font-size: 1.1rem;
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.contact-information-container .option-container {
+  width: 100%;
+  height: 185px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-information-container .option-container button {
+  width: 100px;
+  height: 50px;
+  border-radius: 8px;
+  background: #fff;
+  margin: 0 10px;
+}
+
+.modal-container {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container > p {
     font-size: 1.1rem;
-    margin: 10px 0;
-    cursor: pointer;
 }
 
-.contact-information-container > div {
-    width: 100%;
-    height: 185px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact-information-container > div > div> button {
-    width: 100px;
-    height: 50px;
-    border-radius: 8px;
-    background: #fff;
-    margin: 0 10px;
+.modal-container > div > button {
+  width: 100px;
+  height: 50px;
+  border-radius: 8px;
+  background: #747474af;
+  color: #fff;
+  font-size: 1rem;
+  margin: 10px;
 }

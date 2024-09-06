@@ -9,7 +9,6 @@ import ContactList from "./Main/ContactList";
 import Contact from "./Main/Contact";
 import Message from "./Message";
 import EditComponent from "./Main/EditComponent";
-import ContactListItem from "./Main/ContactListItem";
 
 function App() {
   const [show, setShow] = useState({

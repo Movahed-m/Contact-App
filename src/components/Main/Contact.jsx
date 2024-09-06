@@ -33,19 +33,21 @@ const Contact = (props) => {
     <>
       {isContactShow && (
         <div className={styles["contact-information-container"]}>
-          <img src={photo} style={{ width: "50px" }} />
+          <img src={photo}/>
           <h3>{name}</h3>
-          <span onClick={copyHandler}>{email}</span>
-          <span onClick={copyHandler}>{phone}</span>
-          <div>
+          <span onClick={copyHandler}>Email: {email}</span>
+          <span onClick={copyHandler}>Phone Number: {phone}</span>
+          <div className={styles["option-container"]}>
             <button onClick={() => setIsShow(true)}>Delete Contact</button>
             <button onClick={editHandler}>Edit Contact</button>
           </div>
           {isShow && (
-            <div>
+            <div className={styles["modal-container"]}>
               <p>Are You want to delete the Contact?</p>
+              <div>
               <button onClick={deleteHandler}>Yes</button>
               <button onClick={() => setIsShow(false)}>No</button>
+              </div>
             </div>
           )}
           {isEditDoing && children}

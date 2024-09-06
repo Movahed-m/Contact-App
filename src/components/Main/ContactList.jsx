@@ -29,7 +29,7 @@ const ContactList = (props) => {
       });
       return;
     }
-    setSelected(true);
+    setSelected(selected => !selected);
   };
 
   const deleteButtonHandler = () => {
@@ -76,7 +76,6 @@ const ContactList = (props) => {
           Select
         </button>
         <button
-          // onClick={() => setIsShow(true)}
           onClick={deleteButtonHandler}
           className={selected ? styles["delete-button"] : styles["hide"]}
         >
@@ -96,18 +95,18 @@ const ContactList = (props) => {
         {contacts &&
           contacts.map((item) => (
             <div key={item.id}>
-              <input
-                type="checkbox"
-                onClick={inputHandler}
-                data-item-id={item.id}
-                className={!selected ? styles["hide"] : null}
-              />
               <ContactListItem
                 contact={item}
                 selected={selected}
                 setSelectedContact={setSelectedContact}
                 isEditDoing={isEditDoing}
                 setAlert={setAlert}
+              />
+              <input
+                type="checkbox"
+                onClick={inputHandler}
+                data-item-id={item.id}
+                className={!selected ? styles["hide"] : null}
               />
             </div>
           ))}
