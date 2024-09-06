@@ -41,3 +41,14 @@
 .header > input:focus {
   box-shadow: -4px 4px 12px 2px #e2e1e1;
 }
+
+@media (max-width: 1199px) {
+  .main {
+    width: calc(75% - 15px);
+    margin-left: 15px;
+  }
+  .header > input {
+    width: 300px;
+    height: 40px;
+  }
+}

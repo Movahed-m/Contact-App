@@ -140,3 +140,10 @@
   margin: 15px auto;
   font-size: 1.3rem;
 }
+
+@media (max-width: 1199px) {
+  .modal-container {
+    width: 300px;
+    left: 14%;
+  }
+}

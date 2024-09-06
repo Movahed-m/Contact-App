@@ -38,8 +38,8 @@ const Contact = (props) => {
           <span onClick={copyHandler}>Email: {email}</span>
           <span onClick={copyHandler}>Phone Number: {phone}</span>
           <div className={styles["option-container"]}>
-            <button onClick={() => setIsShow(true)}>Delete Contact</button>
-            <button onClick={editHandler}>Edit Contact</button>
+            <button onClick={() => setIsShow(true)}>Delete</button>
+            <button onClick={editHandler}>Edit</button>
           </div>
           {isShow && (
             <div className={styles["modal-container"]}>

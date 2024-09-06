@@ -49,5 +49,18 @@
     border-radius: 8px;
     background: #acacac;
     color: #fff;
-    margin: 0 5px;
+    margin: 10px 5px;
+}
+
+@media (max-width: 1199px) {
+  .form-container > label {
+    padding: 0;
+  }
+  .form-container > input {
+    margin-left: 10px;
+  }
+  .form-container > div > button {
+    width: 60px;
+    height: 40px;
+  }
 }

@@ -8,3 +8,11 @@
   box-shadow:-7px 11px 28px -3px #45caff;
   overflow: hidden;
 }
+
+@media (max-width: 1199px) {
+  .container {
+    width: 990px;
+    padding: 15px;
+    height: 705px;
+  }
+}

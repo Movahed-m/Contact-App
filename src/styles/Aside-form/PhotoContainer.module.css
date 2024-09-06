@@ -21,3 +21,10 @@
   background-color: #ffffff8c;
   border-radius: 50%;
 }
+
+
+@media (max-width: 1199px) {
+  .profile-photo-container {
+    margin: 10px 0;
+  }
+}
