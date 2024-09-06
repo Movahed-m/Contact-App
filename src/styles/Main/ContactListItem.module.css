@@ -1,5 +1,5 @@
 .contact-item {
-    width: calc(100% - 10px);
+    width: calc(100% - 50px);
     height: 100%;
     margin-left: 10px;
     display: flex;
@@ -16,6 +16,7 @@
 }
 
 .contact-item > span {
+    width: 35%;
     height: 100%;
     line-height: 65px;
     margin: 0 20px;
