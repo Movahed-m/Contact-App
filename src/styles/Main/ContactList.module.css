@@ -87,10 +87,20 @@
   color: #fff;
 }
 
-.contact-list-container > ul {
+.list-container {
   width: 70%;
   height: 490px;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  border: 2px solid #ffffffbb;
+}
+
+.hide-scroll {
+  width: 70%;
+  height: 490px;
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   border-radius: 12px;

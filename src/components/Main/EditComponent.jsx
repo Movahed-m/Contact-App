@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "../../styles/Main/EditComponent.module.css"
 
 const EditComponent = (props) => {
-    const {selectedContact, setSelectedContact, setContacts, newContact, setNewContact, setIsEditDoing} = props;
+    const {selectedContact, setSelectedContact, setContacts, newContact, setNewContact, setIsEditDoing, setAlert} = props;
     const {id, name, email, phone, photo}= selectedContact;
     const [isChange, setIsChange]= useState(false)
 
@@ -23,6 +23,7 @@ const EditComponent = (props) => {
      setContacts(contacts => contacts.filter(contact => contact.id!==id))
      setContacts(contacts => [...contacts, newContact])
      setIsEditDoing(false);
+     setAlert({typeOfAlert: "success", description: "Contact Edit is successfully done ✔"})
     }
   return (
     <form onSubmit={formHandler} className={styles["form-container"]}>
