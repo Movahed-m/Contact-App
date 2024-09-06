@@ -35,11 +35,11 @@ const Contact = (props) => {
         <div className={styles["contact-information-container"]}>
           <img src={photo}/>
           <h3>{name}</h3>
-          <span onClick={copyHandler}>Email: {email}</span>
-          <span onClick={copyHandler}>Phone Number: {phone}</span>
+          <span onClick={copyHandler}>{email}</span>
+          <span onClick={copyHandler}>{phone}</span>
           <div className={styles["option-container"]}>
-            <button onClick={() => setIsShow(true)}>Delete Contact</button>
-            <button onClick={editHandler}>Edit Contact</button>
+            <button onClick={() => setIsShow(true)}>Delete</button>
+            <button onClick={editHandler}>Edit</button>
           </div>
           {isShow && (
             <div className={styles["modal-container"]}>

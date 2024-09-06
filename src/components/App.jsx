@@ -86,6 +86,7 @@ function App() {
               newContact={newContact}
               setNewContact={setNewContact}
               setIsEditDoing={setIsEditDoing}
+              setAlert={setAlert}
             />
           </Contact>
         )}

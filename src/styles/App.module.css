@@ -1,10 +1,25 @@
 .container {
-  width: 1500px;
-  height: 80vh;
+  width: 1200px;
+  height: 735px;
   display: flex;
   background: #ffffff40;
   border-radius: 20px;
   padding: 30px;
   box-shadow:-7px 11px 28px -3px #45caff;
   overflow: hidden;
+}
+
+@media (max-width: 1199px) {
+  .container {
+    width: 990px;
+    padding: 15px;
+    height: 705px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 768px;
+    position: relative;
+  }
 }

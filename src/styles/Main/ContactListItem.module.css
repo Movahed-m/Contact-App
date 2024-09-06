@@ -21,3 +21,18 @@
     line-height: 65px;
     margin: 0 20px;
 }
+
+@media (max-width: 1199px) {
+    .contact-item > span {
+        width: 70%;
+    }
+    .contact-item > span:last-child {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-item {
+        z-index: 9;
+    }
+}

@@ -91,7 +91,7 @@ const ContactList = (props) => {
           </div>
         )}
       </div>
-      <ul>
+      <ul className={!contacts.length ? styles["hide-scroll"]: styles["list-container"]}>
         {contacts &&
           contacts.map((item) => (
             <div key={item.id}>
