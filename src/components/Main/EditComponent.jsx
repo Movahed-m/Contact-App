@@ -9,10 +9,11 @@ const EditComponent = (props) => {
 
     const inputHandler = (event) =>{
         const name = event.target.name;
-        const value = event.target.value
+        const value = event.target.value;
+        console.log(name)
         setSelectedContact(selectedContact => ({...selectedContact, [name]: [value]}));
-        setNewContact({...selectedContact,[name]: [value]})
-        setIsChange(true)
+        setNewContact({...selectedContact,[name]: [value]});
+        setIsChange(true);
     }
 
     const cancelHandler= () => setIsEditDoing(false)
@@ -29,9 +30,9 @@ const EditComponent = (props) => {
         <label htmlFor="editName">FullName:</label>
         <input type="text" name="name" id="editName" defaultValue={name} onChange={inputHandler}/>
         <label htmlFor="editEmail">Email:</label>
-        <input type="email" email="email" id="editEmail" defaultValue={email} onChange={inputHandler}/>
+        <input type="email" name="email" id="editEmail" defaultValue={email} onChange={inputHandler}/>
         <label htmlFor="editPhone">Phone:</label>
-        <input type="number" phone="phone" id="editPhone" defaultValue={phone} onChange={inputHandler}/>
+        <input type="number" name="phone" id="editPhone" defaultValue={phone} onChange={inputHandler}/>
         <div>
         {isChange && <button type="submit">Done</button>}
         <button type="button" onClick={cancelHandler}>Cancel</button>
