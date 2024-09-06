@@ -4,8 +4,9 @@ import input from "../../constants/input";
 import styles from "../../styles/Aside-form/Form.module.css";
 
 const Form = (props) => {
-  const { setShow, contact, setContact, setContacts, children, setAlert } =props;
-  
+  const { setShow, contact, setContact, setContacts, children, setAlert } =
+    props;
+
   const formHandler = (event) => {
     event.preventDefault();
     if (!contact.name || !contact.email || !contact.phone) {

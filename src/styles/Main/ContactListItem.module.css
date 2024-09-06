@@ -30,3 +30,9 @@
         display: none;
     }
 }
+
+@media (max-width: 1024px) {
+    .contact-item {
+        z-index: 9;
+    }
+}

@@ -67,3 +67,23 @@
 .inner-form-container form > button:hover {
   box-shadow: 0 0 30px 1px #1ae527;
 }
+
+@media (max-width: 1024px) {
+  .inner-form-container {
+    position: absolute;
+    width: 728px;
+    height: 578px;
+    background: #ffffff;
+    top: -504px;
+    left: -6px;
+    border-radius: 8px;
+  }
+
+  .form-input-container input {
+    border: 1px solid #d4d4d4;
+  }
+
+  .inner-form-container form > button {
+    margin-top: 40px;
+  }
+}

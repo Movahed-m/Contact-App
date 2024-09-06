@@ -28,3 +28,13 @@
     margin: 10px 0;
   }
 }
+
+@media (max-width: 1024px) {
+  .profile-photo-container {
+    margin: 0;
+  }
+
+  .profile-photo-container > button {
+    right: 45%;
+  }
+}

@@ -44,3 +44,9 @@
     margin: 10px;
     cursor: pointer;
 }
+
+@media (max-width: 1024px) {
+  .photo-container {
+    height: 578px;
+  }
+}

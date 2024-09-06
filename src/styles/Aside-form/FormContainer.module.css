@@ -35,3 +35,18 @@
 .show-form {
     display: none;
 }
+
+@media (max-width: 1024px) {
+    .form-container {
+        position: absolute;
+        bottom: 35px;
+        left: 25px;
+        width: 70px;
+        height: 70px;
+        z-index: 10;
+        background: none;
+    }
+    .form-container h3 {
+        display: none;
+    }
+}
